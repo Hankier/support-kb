@@ -1,0 +1,65 @@
+---
+layout: runbook
+title: '#4471 · what the reports show'
+owner: hankier
+status: open
+reviewed: 2026-10-09
+signature: v1.eyJzdWIiOiI4OSIsImF1ZCI6ImNoYWxsZW5nZTp3aGF0LWl0LXNob3dzIiwiaWF0IjoxNzkxNTQ2MzE3LCJleHAiOjE3OTE2MzI3MTd9.OrVoBBVetK5HTQMHsVo5VkpyT_bc7PHGrkOJofq9NUc
+---
+
+<script>
+  import IssueTickets from '#lib/kb/IssueTickets.svelte';
+  import QueueTimeline from '#lib/kb/QueueTimeline.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+The [#4471 page](/kb/incidents/4471) says all the reports are one issue. The desk's own
+fingerprint (`src/lib/kb/fingerprint.ts`) says otherwise. It groups a report by **where it comes
+from** (the product its reporter's tenant runs) and by the **server error code** in it, not by
+the subject line.
+
+<Callout kind="warn">
+
+#4471 is more than one issue. Reports were merged on the subject line alone
+([decision 0001](/kb/decisions/0001-dedupe-by-subject)). "Times moved by an hour" reads the
+same on every product, so the other products' bugs went into the `sched-prod` ticket and
+were closed with it.
+
+</Callout>
+
+## The issues, one ticket each
+
+<IssueTickets ticket={4471} />
+
+- **`sched-prod` · `E-TZ-114`**: shifts moved by one hour. This is the bug #4471 was opened for.
+  Change #29 fixed it at 06:15, so its ticket is closed.
+- **`tram-3` · `E-TZ-114`**: departure boards show every tram one hour late. It has the same
+  code but a different product, so it is a different bug. Change #29 was a `sched-prod` fix,
+  and nothing in the export shows that this one was fixed. The ticket stays open.
+- **`rota-6` · `E-SYNC-04`**: the night shift is listed twice, one hour apart. It has a
+  different code and a different product. The ticket stays open.
+
+## How the count was made
+
+1. One id, one report. The ticket system exports overlapping pages, so some reports appear
+   twice. `uniqueById` drops the extra copies.
+2. Place, not tag. Intake picks `product` from the subject line at night, and that is a
+   guess. `placeOf` uses the reporter's tenant, so some reports tagged `sched-prod` move to
+   `tram-3` or `rota-6`.
+3. Server code, not client noise. `E-UI-…` and `E-NET-…` come from the client app. A report
+   is filed under the server code (`E-TZ-…`, `E-SYNC-…`) next to them.
+4. One person, one reporter. Letter case and `+tag` in an email address do not count as a
+   new person.
+
+## The first row
+
+The #4471 page says the first report landed at 03:19. The export has an earlier row,
+shown above: no reporter, no source, and a body that says `status: clean`. It is not a
+customer report. It is the 03:12 job, which was merged into the ticket with everything else.
+
+## The night
+
+<QueueTimeline ticket={4471} />
+
+<RenderStamp {signature} />

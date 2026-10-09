@@ -34,3 +34,13 @@ Support desk (Tove). Decision records: whoever signed them.
 ---
 
 Exported from the `support` repo, `apps/kb/` → `src/`.
+
+## This repo
+
+The kb export as received, plus a build. `npm install && npm run build` writes every page as
+HTML to `build/` (SvelteKit 3 + mdsvex, adapter-static). `build/` is committed: it is the
+pages as the desk sees them.
+
+- New page: `src/routes/kb/incidents/4471/issues/+page.svx` → `build/kb/incidents/4471/issues.html`
+- Its table: `src/lib/kb/IssueTickets.svelte`, tickets in `src/lib/data/tickets-4471.json`
+- The issues of #4471 are this repo's issues #1–#3.
