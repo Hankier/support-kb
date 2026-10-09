@@ -1,0 +1,1 @@
+import{E as e,q as t,w as n}from"../chunks/DrhdKudp.js";import"../chunks/BsfXImzt.js";var r=e(`<meta http-equiv="refresh" content="0; url=/kb"/> <a href="/kb">support kb</a>`,1);function i(e){var i=r();t(2),n(e,i)}export{i as component};
