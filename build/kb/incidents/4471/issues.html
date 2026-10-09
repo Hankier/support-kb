@@ -9,11 +9,11 @@
 		<link href="../../../_app/immutable/chunks/CjPXl71r.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/DrhdKudp.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/Q-h46zS3.js" rel="modulepreload">
-		<link href="../../../_app/immutable/entry/app.DqfN35p6.js" rel="modulepreload">
+		<link href="../../../_app/immutable/entry/app.BtuQTW4q.js" rel="modulepreload">
 		<link href="../../../_app/immutable/nodes/0.BqnHcgay.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/DK3Fl9T5.js" rel="modulepreload">
-		<link href="../../../_app/immutable/nodes/6.Bxqn0EFq.js" rel="modulepreload">
-		<link href="../../../_app/immutable/chunks/BpAN_xsu.js" rel="modulepreload">
+		<link href="../../../_app/immutable/nodes/6.C8lfUPDE.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/EZwhy2dY.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/BsfXImzt.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/CRcvH2qj.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/BAjJLSnn.js" rel="modulepreload">
@@ -25,17 +25,17 @@
 		<link href="../../../_app/immutable/assets/_page.BecdUV0e.css" rel="stylesheet">
 	</head>
 	<body>
-		<div style="display: contents"><!--[--><!--[--><!--[0--><!--[--><!--[--><!--[-1--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">#4471 · what the reports show</h1> <p class="meta svelte-e2jw2j"><span>owner <b>hankier</b></span> <span class="status open svelte-e2jw2j">open</span> <span class="svelte-e2jw2j">reviewed 2026-10-09 · 0 days ago</span></p></header> <!--[-1--><!--]--> <main><p>The <a href="/kb/incidents/4471">#4471 page</a> says all the reports are one issue. The desk’s own
+		<div style="display: contents"><!--[--><!--[--><!--[0--><!--[--><!--[--><!--[-1--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">#4471 · what the reports show</h1> <p class="meta svelte-e2jw2j"><span>owner <b>hankier</b></span> <span class="status closed svelte-e2jw2j">closed</span> <span class="svelte-e2jw2j">reviewed 2026-10-09 · 0 days ago</span></p></header> <!--[-1--><!--]--> <main><p>The <a href="/kb/incidents/4471">#4471 page</a> says all the reports are one issue. The desk’s own
 fingerprint (<code>src/lib/kb/fingerprint.ts</code>) says otherwise. It groups a report by <strong>where it comes
 from</strong> (the product its reporter’s tenant runs) and by the <strong>server error code</strong> in it, not by
 the subject line.</p> <aside class="warn svelte-17bri61"><p>#4471 is more than one issue. Reports were merged on the subject line alone
 (<a href="/kb/decisions/0001-dedupe-by-subject">decision 0001</a>). “Times moved by an hour” reads the
 same on every product, so the other products’ bugs went into the <code>sched-prod</code> ticket and
-were closed with it.</p><!----></aside><!----> <h2>The issues, one ticket each</h2> <p class="sum svelte-1sq1fyx"><strong>427</strong> rows in the export · <strong>412</strong> unique reports · <strong>3</strong> issues · <strong>0</strong> without a ticket</p> <table><thead><tr><th>ticket</th><th>place</th><th>code</th><th>reports</th><th>people</th><th>tagged elsewhere</th><th>seen</th></tr></thead><tbody><!--[--><tr class="svelte-1sq1fyx"><td class="svelte-1sq1fyx"><!--[0--><a href="https://github.com/Hankier/support-kb/issues/1">#1</a><!--]--></td><td class="svelte-1sq1fyx">sched-prod</td><td class="svelte-1sq1fyx"><code>E-TZ-114</code></td><td class="svelte-1sq1fyx">349</td><td class="svelte-1sq1fyx">206</td><td class="svelte-1sq1fyx">0</td><td class="svelte-1sq1fyx">03:12 → 06:13</td></tr><tr class="svelte-1sq1fyx"><td class="svelte-1sq1fyx"><!--[0--><a href="https://github.com/Hankier/support-kb/issues/2">#2</a><!--]--></td><td class="svelte-1sq1fyx">tram-3</td><td class="svelte-1sq1fyx"><code>E-TZ-114</code></td><td class="svelte-1sq1fyx">44</td><td class="svelte-1sq1fyx">26</td><td class="svelte-1sq1fyx">3</td><td class="svelte-1sq1fyx">03:33 → 06:11</td></tr><tr class="svelte-1sq1fyx"><td class="svelte-1sq1fyx"><!--[0--><a href="https://github.com/Hankier/support-kb/issues/3">#3</a><!--]--></td><td class="svelte-1sq1fyx">rota-6</td><td class="svelte-1sq1fyx"><code>E-SYNC-04</code></td><td class="svelte-1sq1fyx">19</td><td class="svelte-1sq1fyx">9</td><td class="svelte-1sq1fyx">6</td><td class="svelte-1sq1fyx">03:27 → 06:08</td></tr><!--]--></tbody></table> <!--[0--><p class="first svelte-1sq1fyx">First row merged into #4471: <code>R-41200</code> at <b>03:12</b> · reporter <code>—</code> · source <code>—</code> · body <code>status: clean (E-TZ-114)</code></p><!--]--><!----> <ul><li><strong><code>sched-prod</code> · <code>E-TZ-114</code></strong>: shifts moved by one hour. This is the bug #4471 was opened for.
-Change #29 fixed it at 06:15, so its ticket is closed.</li> <li><strong><code>tram-3</code> · <code>E-TZ-114</code></strong>: departure boards show every tram one hour late. It has the same
-code but a different product, so it is a different bug. Change #29 was a <code>sched-prod</code> fix,
-and nothing in the export shows that this one was fixed. The ticket stays open.</li> <li><strong><code>rota-6</code> · <code>E-SYNC-04</code></strong>: the night shift is listed twice, one hour apart. It has a
-different code and a different product. The ticket stays open.</li></ul> <h2>How the count was made</h2> <ol><li>One id, one report. The ticket system exports overlapping pages, so some reports appear
+were closed with it.</p><!----></aside><!----> <h2>The issues, one ticket each</h2> <p class="sum svelte-1sq1fyx"><strong>427</strong> rows in the export · <strong>412</strong> unique reports · <strong>3</strong> issues · <strong>0</strong> without a ticket · <strong>0</strong> open</p> <table><thead><tr><th>ticket</th><th>place</th><th>code</th><th>reports</th><th>people</th><th>tagged elsewhere</th><th>seen</th><th>state</th></tr></thead><tbody><!--[--><tr class="svelte-1sq1fyx"><td class="svelte-1sq1fyx"><!--[0--><a href="https://github.com/Hankier/support-kb/issues/1">#1</a><!--]--></td><td class="svelte-1sq1fyx">sched-prod</td><td class="svelte-1sq1fyx"><code>E-TZ-114</code></td><td class="svelte-1sq1fyx">349</td><td class="svelte-1sq1fyx">206</td><td class="svelte-1sq1fyx">0</td><td class="svelte-1sq1fyx">03:12 → 06:13</td><td class="svelte-1sq1fyx"><!--[0-->closed · completed · change #29<!--]--></td></tr><tr class="svelte-1sq1fyx"><td class="svelte-1sq1fyx"><!--[0--><a href="https://github.com/Hankier/support-kb/issues/2">#2</a><!--]--></td><td class="svelte-1sq1fyx">tram-3</td><td class="svelte-1sq1fyx"><code>E-TZ-114</code></td><td class="svelte-1sq1fyx">44</td><td class="svelte-1sq1fyx">26</td><td class="svelte-1sq1fyx">3</td><td class="svelte-1sq1fyx">03:33 → 06:11</td><td class="svelte-1sq1fyx"><!--[0-->closed · not planned · won't fix: boards retired<!--]--></td></tr><tr class="svelte-1sq1fyx"><td class="svelte-1sq1fyx"><!--[0--><a href="https://github.com/Hankier/support-kb/issues/3">#3</a><!--]--></td><td class="svelte-1sq1fyx">rota-6</td><td class="svelte-1sq1fyx"><code>E-SYNC-04</code></td><td class="svelte-1sq1fyx">19</td><td class="svelte-1sq1fyx">9</td><td class="svelte-1sq1fyx">6</td><td class="svelte-1sq1fyx">03:27 → 06:08</td><td class="svelte-1sq1fyx"><!--[0-->closed · completed · change #31<!--]--></td></tr><!--]--></tbody></table> <!--[0--><p class="first svelte-1sq1fyx">First row merged into #4471: <code>R-41200</code> at <b>03:12</b> · reporter <code>—</code> · source <code>—</code> · body <code>status: clean (E-TZ-114)</code></p><!--]--><!----> <ul><li><strong><code>sched-prod</code> · <code>E-TZ-114</code></strong>: shifts moved by one hour. This is the bug #4471 was opened for.
+Change #29 fixed it at 06:15. Closed, completed.</li> <li><strong><code>tram-3</code> · <code>E-TZ-114</code></strong>: departure boards show every tram one hour late. It has the same
+code but a different product, so it is a different bug, and change #29 did not fix it.
+Engineering will not fix it: the boards are retired. Closed, not planned.</li> <li><strong><code>rota-6</code> · <code>E-SYNC-04</code></strong>: the night shift is listed twice, one hour apart. It has a
+different code and a different product. Change #31 fixed the sync. Closed, completed.</li></ul> <h2>How the count was made</h2> <ol><li>One id, one report. The ticket system exports overlapping pages, so some reports appear
 twice. <code>uniqueById</code> drops the extra copies.</li> <li>Place, not tag. Intake picks <code>product</code> from the subject line at night, and that is a
 guess. <code>placeOf</code> uses the reporter’s tenant, so some reports tagged <code>sched-prod</code> move to <code>tram-3</code> or <code>rota-6</code>.</li> <li>Server code, not client noise. <code>E-UI-…</code> and <code>E-NET-…</code> come from the client app. A report
 is filed under the server code (<code>E-TZ-…</code>, <code>E-SYNC-…</code>) next to them.</li> <li>One person, one reporter. Letter case and <code>+tag</code> in an email address do not count as a
@@ -45,16 +45,16 @@ customer report. It is the 03:12 job, which was merged into the ticket with ever
 			
 			<script>
 				{
-					__sveltekit_8xso8l = {
+					__sveltekit_1aasx6f = {
 						base: new URL("../../..", location).pathname.slice(0, -1),
-						version: "1791547005827"
+						version: "1791547102669"
 					};
 
 					const element = document.currentScript.parentElement;
 
 					import("../../../_app/immutable/entry/start.B_C2gqdF.js").then(async (kit) => {
-						kit.init(__sveltekit_8xso8l);
-						const app = await import("../../../_app/immutable/entry/app.DqfN35p6.js");
+						kit.init(__sveltekit_1aasx6f);
+						const app = await import("../../../_app/immutable/entry/app.BtuQTW4q.js");
 						kit.start(app, element, {
 							node_ids: [0, 6],
 							data: [null,null],

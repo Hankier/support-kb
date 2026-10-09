@@ -1,8 +1,8 @@
 {
   "repo": "Hankier/support-kb",
   "byFingerprint": {
-    "sched-prod:E-TZ-114": 1,
-    "tram-3:E-TZ-114": 2,
-    "rota-6:E-SYNC-04": 3
+    "sched-prod:E-TZ-114": { "number": 1, "state": "closed", "reason": "completed", "by": "change #29" },
+    "tram-3:E-TZ-114": { "number": 2, "state": "closed", "reason": "not planned", "by": "won't fix: boards retired" },
+    "rota-6:E-SYNC-04": { "number": 3, "state": "closed", "reason": "completed", "by": "change #31" }
   }
 }

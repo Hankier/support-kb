@@ -2,7 +2,7 @@
 layout: runbook
 title: '#4471 · what the reports show'
 owner: hankier
-status: open
+status: closed
 reviewed: 2026-10-09
 signature: v1.eyJzdWIiOiI4OSIsImF1ZCI6ImNoYWxsZW5nZTp3aGF0LWl0LXNob3dzIiwiaWF0IjoxNzkxNTQ2MzE3LCJleHAiOjE3OTE2MzI3MTd9.OrVoBBVetK5HTQMHsVo5VkpyT_bc7PHGrkOJofq9NUc
 ---
@@ -33,12 +33,12 @@ were closed with it.
 <IssueTickets ticket={4471} />
 
 - **`sched-prod` · `E-TZ-114`**: shifts moved by one hour. This is the bug #4471 was opened for.
-  Change #29 fixed it at 06:15, so its ticket is closed.
+  Change #29 fixed it at 06:15. Closed, completed.
 - **`tram-3` · `E-TZ-114`**: departure boards show every tram one hour late. It has the same
-  code but a different product, so it is a different bug. Change #29 was a `sched-prod` fix,
-  and nothing in the export shows that this one was fixed. The ticket stays open.
+  code but a different product, so it is a different bug, and change #29 did not fix it.
+  Engineering will not fix it: the boards are retired. Closed, not planned.
 - **`rota-6` · `E-SYNC-04`**: the night shift is listed twice, one hour apart. It has a
-  different code and a different product. The ticket stays open.
+  different code and a different product. Change #31 fixed the sync. Closed, completed.
 
 ## How the count was made
 

@@ -10,7 +10,8 @@
   const rows = reports as Report[];
   const merged = $derived(uniqueById(rows).filter((r) => r.mergedInto === ticket));
   const clusters = $derived(clusterReports(merged, placeOf));
-  const ticketOf = (fp: string) => (tickets.byFingerprint as Record<string, number>)[fp];
+  type Ticket = { number: number; state: string; reason: string; by: string };
+  const ticketOf = (fp: string) => (tickets.byFingerprint as Record<string, Ticket>)[fp];
   const url = (n: number) => `https://github.com/${tickets.repo}/issues/${n}`;
   const time = (iso: string) => iso.slice(11, 16);
   const retagged = (c: { place: string; reports: Report[] }) => c.reports.filter((r) => r.product !== c.place).length;
@@ -19,23 +20,25 @@
 
 <p class="sum">
   <strong>{rows.length}</strong> rows in the export · <strong>{merged.length}</strong> unique reports ·
-  <strong>{clusters.length}</strong> issues · <strong>{clusters.filter((c) => !ticketOf(c.fingerprint)).length}</strong> without a ticket
+  <strong>{clusters.length}</strong> issues · <strong>{clusters.filter((c) => !ticketOf(c.fingerprint)).length}</strong> without a ticket ·
+  <strong>{clusters.filter((c) => ticketOf(c.fingerprint)?.state === 'open').length}</strong> open
 </p>
 
 <table>
   <thead>
-    <tr><th>ticket</th><th>place</th><th>code</th><th>reports</th><th>people</th><th>tagged elsewhere</th><th>seen</th></tr>
+    <tr><th>ticket</th><th>place</th><th>code</th><th>reports</th><th>people</th><th>tagged elsewhere</th><th>seen</th><th>state</th></tr>
   </thead>
   <tbody>
     {#each clusters as c (c.fingerprint)}
       <tr class:missing={!ticketOf(c.fingerprint)}>
-        <td>{#if ticketOf(c.fingerprint)}<a href={url(ticketOf(c.fingerprint))}>#{ticketOf(c.fingerprint)}</a>{:else}none{/if}</td>
+        <td>{#if ticketOf(c.fingerprint)}<a href={url(ticketOf(c.fingerprint).number)}>#{ticketOf(c.fingerprint).number}</a>{:else}none{/if}</td>
         <td>{c.place}</td>
         <td><code>{c.code}</code></td>
         <td>{c.reports.length}</td>
         <td>{c.people}</td>
         <td>{retagged(c)}</td>
         <td>{time(c.firstSeen)} → {time(c.lastSeen)}</td>
+        <td>{#if ticketOf(c.fingerprint)}{ticketOf(c.fingerprint).state} · {ticketOf(c.fingerprint).reason} · {ticketOf(c.fingerprint).by}{/if}</td>
       </tr>
     {/each}
   </tbody>
